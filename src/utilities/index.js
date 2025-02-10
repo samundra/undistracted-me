@@ -77,7 +77,7 @@ const getNepaliMitiInSelectedLanguage = (language) => {
     const formattedMonth = language === LANGUAGES.ne ? MONTH_NAMES_IN_NEPALI[nepaliMonth - 1] : MONTH_NAMES[nepaliMonth - 1];
     const formattedDay = language === LANGUAGES.ne ? convertThisNumberToNepali(padZero(nepaliDay)) : padZero(nepaliDay);
 
-    return `${formattedMonth} ${formattedDay}`;
+    return `BS ${_nepaliYear}, ${formattedMonth} ${formattedDay}`;
 }
 
 const getLiveClockInSelectedLanguage = (language) => {
@@ -90,13 +90,13 @@ const getLiveClockInSelectedLanguage = (language) => {
 
 const getDateTodayInSelectedLanguage = (language) => {
     const dayJsInstance = getTimeZoneAwareDayJsInstance();
-    const [month, day, weekDay] = dayJsInstance.format(DATE_TODAY_FORMATS[language]).split(' ');
+    const [year, month, day, weekDay] = dayJsInstance.format(DATE_TODAY_FORMATS[language]).split(' ');
 
     const formattedMonth = language === LANGUAGES.ne ? ENGLISH_MONTH_NAMES[month - 1] : month;
     const formattedDay = language === LANGUAGES.ne ? convertThisNumberToNepali(day) : day;
     const formattedWeekDay = language === LANGUAGES.ne ? DAY_NAMES[weekDay] : weekDay;
 
-    return `${formattedMonth} ${formattedDay}, ${formattedWeekDay}`;
+    return `${year} AD, ${formattedMonth} ${formattedDay}, ${formattedWeekDay}`;
 }
 
 export {

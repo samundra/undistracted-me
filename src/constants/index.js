@@ -168,8 +168,8 @@ export const NUMBER_MAPPING = {
 };
 
 export const DATE_TODAY_FORMATS = {
-  ne: "M D d",
-  en: "MMMM D dddd",
+  ne: "Y M D d",
+  en: "YYYY MMMM D dddd",
 };
 
 export const LIVE_CLOCK_FORMATS = {
